@@ -15,5 +15,5 @@ I am currently focused on two related questions:
 * **Modernization of Financial Market Infrastructure:** In which domains are distributed ledger systems and tokenization truly useful for modernizing FMI?
 * **Market Microstructure for Alternative Assets:** How should decentralized markets behave for non-traditional assets like event contracts, compute, perps, everlasting options?
 
-Outside of school and work, I enjoy playing sports, reading, and travelling.
+Outside of school and work I enjoy playing sports, reading, and travelling.
 
