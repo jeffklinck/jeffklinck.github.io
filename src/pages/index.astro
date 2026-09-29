@@ -9,6 +9,7 @@ const { Content } = await render(about);
 ---
 
 <BaseLayout description={about.data.description}>
+  <h1>{site.name}</h1>
   <article class="prose"><Content /></article>
   <ul class="page-links">
     {site.homeLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
