@@ -20,12 +20,15 @@ const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.d
         kind={paper.data.kind}
         venue={paper.data.venue}
         summary={paper.data.summary}
+        abstract={paper.data.abstract}
+        logo={paper.data.logo}
+        logoAlt={paper.data.logoAlt}
         externalUrl={paper.data.externalUrl}
+        gallery={paper.data.gallery}
         visual={paper.data.visual}
       />
     ))}
   </div>
-  <p><a class="back-link" href="/jeff-klinck-resume.pdf">Download my résumé</a></p>
 </BaseLayout>
 
 <script>

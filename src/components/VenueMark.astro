@@ -1,21 +1,13 @@
 ---
-interface Props { venue: string }
-const { venue } = Astro.props;
-const key = venue.includes("International Governance")
-  ? "cigi"
-  : venue.includes("IEEE")
-    ? "ieee"
-    : venue.includes("Financial Technologies")
-      ? "aft"
-      : venue.includes("Network Management")
-        ? "wiley"
-        : "default";
+interface Props {
+  venue: string;
+  logo: string;
+  logoAlt: string;
+}
+const { venue, logo, logoAlt } = Astro.props;
 ---
 
-<div class:list={["venue-mark", `venue-${key}`]} aria-label={venue}>
-  {key === "cigi" && <><span class="venue-monogram">CIGI</span><span class="venue-caption">Centre for International<br />Governance Innovation</span></>}
-  {key === "ieee" && <><span class="venue-symbol" aria-hidden="true">◇</span><span class="venue-monogram">IEEE</span><span class="venue-caption">International Conference<br />on Blockchain</span></>}
-  {key === "aft" && <><span class="venue-monogram">AFT</span><span class="venue-caption">Advances in<br />Financial Technologies</span></>}
-  {key === "wiley" && <><span class="venue-monogram">WILEY</span><span class="venue-caption">International Journal<br />of Network Management</span></>}
-  {key === "default" && <span class="venue-caption">{venue}</span>}
+<div class="venue-mark">
+  <img src={logo} alt={logoAlt} loading="lazy" />
+  <span class="venue-caption">{venue}</span>
 </div>

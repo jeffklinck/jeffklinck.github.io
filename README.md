@@ -7,8 +7,18 @@ A static personal site built with Astro and published with GitHub Pages. There i
 - Edit the bio in `src/content/pages/about.md`.
 - Edit education and coursework in `src/content/pages/professional.md`.
 - Add a note by copying a file in `src/content/notes/`, renaming it, and changing its frontmatter and body.
-- Add a paper by copying a file in `src/content/papers/` and setting its `order`, metadata, and body.
+- Add a paper by copying a file in `src/content/papers/`. Its frontmatter controls the card title, venue logo, summary, popup abstract, images, links, visual fallback, and display order; its Markdown body is the full write-up.
 - Add images to `public/images/`, then use them from Markdown as `/images/your-file.jpg`.
+
+Paper logos live in `public/logos/`. Set `logo` and `logoAlt` in the paper frontmatter. To replace the generated popup illustration with your own images, add entries such as:
+
+```yaml
+gallery:
+  - src: /images/paper/chart.jpg
+    alt: Chart comparing the two models
+  - src: /images/paper/diagram.jpg
+    alt: Diagram of the proposed architecture
+```
 
 Markdown supports headings, lists, links, blockquotes, tables, code, footnotes, and images. Raw HTML can be used for a captioned image:
 

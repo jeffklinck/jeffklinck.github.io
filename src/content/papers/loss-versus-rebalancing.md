@@ -4,7 +4,11 @@ year: "2025"
 kind: Conference paper
 venue: Advances in Financial Technologies
 summary: An options-based framework for understanding the losses automated-market-maker liquidity providers face relative to a rebalanced portfolio.
+abstract: This paper models loss-versus-rebalancing in automated market makers through continuous-installment options. The framework connects an AMM-specific performance measure to familiar derivatives concepts and clarifies how price paths, fee income, and embedded optionality shape liquidity-provider outcomes.
+logo: /logos/lipics.png
+logoAlt: LIPIcs proceedings logo
 externalUrl: https://www.eecg.utoronto.ca/~veneris/pubs.html
+gallery: []
 visual: 4
 order: 4
 ---

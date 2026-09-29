@@ -8,18 +8,22 @@ interface Props {
   kind: string;
   venue: string;
   summary: string;
+  abstract: string;
+  logo: string;
+  logoAlt: string;
   externalUrl?: string;
+  gallery: Array<{ src: string; alt: string }>;
   visual: number;
 }
-const { id, title, year, kind, venue, summary, externalUrl, visual } = Astro.props;
+const { id, title, year, kind, venue, summary, abstract, logo, logoAlt, externalUrl, gallery, visual } = Astro.props;
 const dialogId = `paper-${id}`;
 ---
 
 <article class="paper-card-wrap">
   <button class="paper-card" type="button" data-open-dialog={dialogId} aria-haspopup="dialog">
-    <VenueMark venue={venue} />
+    <VenueMark venue={venue} logo={logo} logoAlt={logoAlt} />
     <span class="paper-card-copy">
-      <span class="meta">{kind} · {year}</span>
+      <span class="meta">{kind} - {year}</span>
       <strong>{title}</strong>
       <span class="paper-card-summary">{summary}</span>
       <span class="paper-card-action">View details →</span>
@@ -29,16 +33,22 @@ const dialogId = `paper-${id}`;
   <dialog class="paper-dialog" id={dialogId} aria-labelledby={`${dialogId}-title`}>
     <div class="paper-dialog-inner">
       <button class="dialog-close" type="button" data-close-dialog aria-label="Close paper details">×</button>
-      <VenueMark venue={venue} />
-      <p class="meta">{kind} · {year}</p>
+      <VenueMark venue={venue} logo={logo} logoAlt={logoAlt} />
+      <p class="meta">{kind} - {year}</p>
       <h2 id={`${dialogId}-title`}>{title}</h2>
-      <div class="paper-gallery" aria-label="Paper image previews">
-        <div class={`paper-preview paper-preview-main visual-${visual}`} role="img" aria-label={`Illustration for ${title}`}></div>
-        <div class={`paper-preview paper-preview-detail detail-left visual-${visual}`} role="img" aria-label="Illustration detail"></div>
-        <div class={`paper-preview paper-preview-detail detail-right visual-${visual}`} role="img" aria-label="Second illustration detail"></div>
-      </div>
+      {gallery.length > 0 ? (
+        <div class="paper-gallery paper-gallery-images" aria-label="Paper image previews">
+          {gallery.map((image) => <img src={image.src} alt={image.alt} loading="lazy" />)}
+        </div>
+      ) : (
+        <div class="paper-gallery" aria-label="Paper image previews">
+          <div class={`paper-preview paper-preview-main visual-${visual}`} role="img" aria-label={`Illustration for ${title}`}></div>
+          <div class={`paper-preview paper-preview-detail detail-left visual-${visual}`} role="img" aria-label="Illustration detail"></div>
+          <div class={`paper-preview paper-preview-detail detail-right visual-${visual}`} role="img" aria-label="Second illustration detail"></div>
+        </div>
+      )}
       <h3>Short abstract</h3>
-      <p>{summary}</p>
+      <p>{abstract}</p>
       <div class="dialog-actions">
         <a href={`/papers/${id}/`}>Read the full write-up</a>
         {externalUrl ? <a class="primary-link" href={externalUrl}>Open published work ↗</a> : <span class="meta">Publication forthcoming</span>}

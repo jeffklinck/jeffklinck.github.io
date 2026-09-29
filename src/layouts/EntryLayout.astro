@@ -11,7 +11,7 @@ const formatted = date ? formatDate(date) : undefined;
   <article class="entry">
     <header class="entry-header">
       {visual && <div class={`paper-visual visual-${visual}`} role="img" aria-label={`Abstract illustration for ${title}`}></div>}
-      <p class="eyebrow">{eyebrow}{formatted && <> · {formatted}</>}{venue && <> · {venue}</>}</p>
+      <p class="eyebrow">{eyebrow}{formatted && <> - {formatted}</>}{venue && <> - {venue}</>}</p>
       <h1>{title}</h1>
       <p class="dek">{description}</p>
       {externalUrl && <p class="source-link"><a href={externalUrl}>Read the published paper ↗</a></p>}

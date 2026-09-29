@@ -4,7 +4,11 @@ year: "2025"
 kind: Conference paper
 venue: IEEE International Conference on Blockchain
 summary: A declarative approach to on-chain limit order books that treats correctness as a design constraint rather than an after-the-fact audit.
+abstract: This paper studies an on-chain limit order book built around a declarative representation of contract behaviour. By expressing conservation, ordering, and state-transition constraints directly, the design aims to make core properties easier to verify before deployment.
+logo: /logos/ieee.png
+logoAlt: IEEE logo
 externalUrl: https://www.eecg.toronto.edu/~veneris/ICB25.pdf
+gallery: []
 visual: 3
 order: 3
 ---

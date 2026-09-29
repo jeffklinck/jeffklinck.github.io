@@ -9,8 +9,6 @@ description: Education, research, and papers by Jeff Klinck.
 
 **University of Toronto**  
 BASc in Engineering Science  
-*Engineering Physics major · Artificial Intelligence Engineering minor · Expected 2027*
-
-T-Holder’s Academic Excellence Award.
+*Engineering Physics major - Artificial Intelligence Engineering minor - Expected 2027*
 
 **Selected coursework:** Machine Intelligence; Quantum Mechanics; Computer Systems and Networks; Probability and Statistics.
