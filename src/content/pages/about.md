@@ -20,4 +20,4 @@ I am currently focused on two related questions:
 - **Market Microstructure for Alternative Assets**<br>
   *How should decentralized markets behave for non-traditional assets like event contracts, compute, perps, everlasting options?*
 
-Outside of school work, I enjoy playing Varsity Lacrosse for UofT, reading, and travelling.
+Outside of school and work, I enjoy playing Varsity Lacrosse for UofT, reading, and travelling.
