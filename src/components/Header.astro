@@ -1,16 +1,11 @@
 ---
+import site from "../data/site.json";
 const path = Astro.url.pathname;
-const links = [
-  { href: "/", label: "About" },
-  { href: "/professional/", label: "Professional" },
-  { href: "/personal/", label: "Personal" },
-  { href: "/contact/", label: "Contact" },
-];
 ---
 
 <header class="site-header">
-  <nav aria-label="Primary navigation">
-    {links.map((link) => (
+  <nav aria-label={site.navigationLabel}>
+    {site.navigation.map((link) => (
       <a href={link.href} aria-current={path === link.href || (link.href !== "/" && path.startsWith(link.href)) ? "page" : undefined}>{link.label}</a>
     ))}
   </nav>

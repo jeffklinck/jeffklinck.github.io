@@ -1,24 +1,19 @@
-# Jeff Klinck — personal site
+# Jeff Klinck - personal site
 
 A static personal site built with Astro and published with GitHub Pages. There is no database or custom editor: the writing lives in ordinary Markdown files in this repository.
 
-## Make common updates
+## Where to edit content
 
 - Edit the bio in `src/content/pages/about.md`.
-- Edit education and coursework in `src/content/pages/professional.md`.
+- Edit education and work experience in `src/content/pages/professional.md`.
+- Edit the Personal introduction in `src/content/pages/personal.md`.
+- Edit contact links in `src/content/pages/contact.md`.
 - Add a note by copying a file in `src/content/notes/`, renaming it, and changing its frontmatter and body.
-- Add a paper by copying a file in `src/content/papers/`. Its frontmatter controls the card title, venue logo, summary, popup abstract, images, links, visual fallback, and display order; its Markdown body is the full write-up.
+- Add a paper by copying a file in `src/content/papers/`. Its frontmatter controls the title, citation, short description, publication link, and display order.
+- Edit the site name, navigation, homepage links, and shared labels in `src/data/site.json`.
 - Add images to `public/images/`, then use them from Markdown as `/images/your-file.jpg`.
 
-Paper logos live in `public/logos/`. Set `logo` and `logoAlt` in the paper frontmatter. To replace the generated popup illustration with your own images, add entries such as:
-
-```yaml
-gallery:
-  - src: /images/paper/chart.jpg
-    alt: Chart comparing the two models
-  - src: /images/paper/diagram.jpg
-    alt: Diagram of the proposed architecture
-```
+The files under `src/content/` and `src/data/site.json` contain all routine site text. Layout and styling live elsewhere and do not need to be edited for content changes.
 
 Markdown supports headings, lists, links, blockquotes, tables, code, footnotes, and images. Raw HTML can be used for a captioned image:
 

@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import site from "../../data/site.json";
 const page = await getEntry("pages", "professional");
 if (!page) throw new Error("Missing professional page");
 const { Content } = await render(page);
@@ -11,7 +12,7 @@ const experience = page.data.experience ?? [];
 <BaseLayout title={page.data.title} description={page.data.description}>
   <article class="prose">
     <Content />
-    <h2>Papers</h2>
+    <h2>{site.labels.papers}</h2>
     <ol class="citation-list">
       {papers.map((paper) => (
         <li>
@@ -19,7 +20,7 @@ const experience = page.data.experience ?? [];
         </li>
       ))}
     </ol>
-    <h2>Work Experience</h2>
+    <h2>{site.labels.workExperience}</h2>
     <div class="experience-list">
       {experience.map((item) => (
         <section>

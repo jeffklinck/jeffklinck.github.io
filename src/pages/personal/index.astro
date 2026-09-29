@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { formatDate } from "../../lib/dates";
+import site from "../../data/site.json";
 const page = await getEntry("pages", "personal");
 if (!page) throw new Error("Missing personal page");
 const { Content } = await render(page);
@@ -11,7 +12,7 @@ const notes = (await getCollection("notes", ({ data }) => !data.draft)).sort((a,
 <BaseLayout title={page.data.title} description={page.data.description}>
   <article class="prose">
     <Content />
-    <h2>Notes</h2>
+    <h2>{site.labels.notes}</h2>
     <ul>
       {notes.map((note) => (
         <li>

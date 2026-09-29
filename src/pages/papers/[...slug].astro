@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import site from "../../data/site.json";
 export async function getStaticPaths() {
   const papers = await getCollection("papers");
   return papers.map((paper) => ({ params: { slug: paper.id }, props: { paper } }));
@@ -13,7 +14,7 @@ const { paper } = Astro.props;
     <h1>{paper.data.title}</h1>
     <p class="citation-detail">{paper.data.citationAuthors}, “{paper.data.title},” {paper.data.citationPublication}</p>
     <p>{paper.data.abstract}</p>
-    {paper.data.externalUrl && <p><a href={paper.data.externalUrl}>Read the published work ↗</a></p>}
-    <p><a href="/professional/">← All papers</a></p>
+    {paper.data.externalUrl && <p><a href={paper.data.externalUrl}>{site.labels.readPublishedWork}</a></p>}
+    <p><a href="/professional/">{site.labels.allPapers}</a></p>
   </article>
 </BaseLayout>

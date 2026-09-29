@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { formatDate } from "../../lib/dates";
+import site from "../../data/site.json";
 export async function getStaticPaths() {
   const notes = await getCollection("notes", ({ data }) => !data.draft);
   return notes.map((note) => ({ params: { slug: note.id }, props: { note } }));
@@ -15,6 +16,6 @@ const { Content } = await render(note);
     <h1>{note.data.title}</h1>
     <p class="meta">{formatDate(note.data.date)}</p>
     <Content />
-    <p><a href="/personal/">← All notes</a></p>
+    <p><a href="/personal/">{site.labels.allNotes}</a></p>
   </article>
 </BaseLayout>

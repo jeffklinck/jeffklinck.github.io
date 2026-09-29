@@ -1,0 +1,25 @@
+{
+  "name": "Jeff Klinck",
+  "language": "en",
+  "defaultDescription": "Research, writing, and personal notes by Jeff Klinck.",
+  "navigationLabel": "Primary navigation",
+  "navigation": [
+    { "href": "/", "label": "About" },
+    { "href": "/professional/", "label": "Professional" },
+    { "href": "/personal/", "label": "Personal" },
+    { "href": "/contact/", "label": "Contact" }
+  ],
+  "homeLinks": [
+    { "href": "/professional/", "label": "Professional work and publications" },
+    { "href": "/personal/", "label": "Notes and personal writing" },
+    { "href": "/contact/", "label": "Contact information" }
+  ],
+  "labels": {
+    "papers": "Papers",
+    "workExperience": "Work Experience",
+    "notes": "Notes",
+    "readPublishedWork": "Read the published work ↗",
+    "allPapers": "← All papers",
+    "allNotes": "← All notes"
+  }
+}
