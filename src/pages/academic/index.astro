@@ -1,0 +1,26 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const page = await getEntry("pages", "academic");
+if (!page) throw new Error("Missing academic page");
+const { Content } = await render(page);
+const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title={page.data.title} description={page.data.description} wide>
+  <article class="prose"><Content /></article>
+  <div class="section-heading"><h2>Papers</h2></div>
+  <div class="entry-list">
+    {papers.map((paper, index) => (
+      <article class="entry-row paper-row">
+        <div class={`paper-thumb visual-${paper.data.visual}`} role="img" aria-label="Abstract paper illustration"></div>
+        <div>
+          <p class="meta">{String(index + 1).padStart(2, "0")} · {paper.data.kind} · {paper.data.year}</p>
+          <h3><a href={`/papers/${paper.id}/`}>{paper.data.title}</a></h3>
+          <p>{paper.data.summary}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+  <p><a class="back-link" href="/jeff-klinck-resume.pdf">Download my résumé</a></p>
+</BaseLayout>

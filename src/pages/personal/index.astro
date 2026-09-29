@@ -1,0 +1,23 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate } from "../../lib/dates";
+const page = await getEntry("pages", "personal");
+if (!page) throw new Error("Missing personal page");
+const { Content } = await render(page);
+const notes = (await getCollection("notes", ({ data }) => !data.draft)).sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+
+<BaseLayout title={page.data.title} description={page.data.description}>
+  <article class="prose"><Content /></article>
+  <div class="section-heading"><h2>Notes</h2><span class="meta">{notes.length} entries</span></div>
+  <div class="entry-list">
+    {notes.map((note) => (
+      <article class="entry-row">
+        <p class="entry-date">{formatDate(note.data.date)}</p>
+        <h2><a href={`/notes/${note.id}/`}>{note.data.title}</a></h2>
+        <p>{note.data.summary}</p>
+      </article>
+    ))}
+  </div>
+</BaseLayout>

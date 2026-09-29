@@ -1,0 +1,58 @@
+:root { --text: #171717; --muted: #696969; --link: #0645ad; --rule: #d8d8d8; --wash: #f7f6f3; }
+* { box-sizing: border-box; }
+html { background: #fff; }
+body { margin: 0; color: var(--text); background: #fff; font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .14em; }
+a:hover { color: #002f78; }
+.site-shell { width: min(100% - 36px, 680px); margin: 0 auto; }
+.site-shell.wide { width: min(100% - 36px, 820px); }
+.site-header { padding: 32px 0 22px; border-bottom: 1px solid var(--rule); }
+.site-name { display: inline-block; margin-bottom: 8px; color: var(--text); font-size: 18px; font-weight: 700; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; }
+nav a { color: var(--text); text-decoration: none; }
+nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: .22em; }
+main { padding: 48px 0 76px; }
+h1 { margin: 0 0 26px; font-size: 31px; line-height: 1.18; }
+h2 { margin: 38px 0 14px; font-size: 21px; line-height: 1.3; }
+h3 { margin: 28px 0 10px; font-size: 19px; line-height: 1.35; }
+p { margin: 0 0 19px; }
+ul, ol { margin: 0 0 22px; padding-left: 26px; }
+li { margin-bottom: 8px; }
+.page-links { margin-top: 30px; padding: 0; list-style: none; }
+.eyebrow, .meta, .entry-date { margin-bottom: 6px; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.lede { font-size: 19px; line-height: 1.55; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 40px 0 14px; }
+.section-heading h2 { margin: 0; }
+.section-heading a { font-size: 14px; }
+.entry-list { border-top: 1px solid var(--rule); }
+.entry-row { padding: 23px 0 22px; border-bottom: 1px solid var(--rule); }
+.entry-row h2, .entry-row h3 { margin: 0 0 7px; font-size: 20px; }
+.entry-row h2 a, .entry-row h3 a { color: var(--text); text-decoration: none; }
+.entry-row h2 a:hover, .entry-row h3 a:hover { color: var(--link); }
+.entry-row p:last-child { margin-bottom: 0; }
+.entry-header { margin-bottom: 40px; }
+.entry-header h1 { margin-bottom: 16px; font-size: clamp(31px, 6vw, 42px); letter-spacing: -.012em; }
+.dek { color: #414141; font-size: 20px; line-height: 1.5; }
+.source-link { font-size: 15px; }
+.prose { font-size: 18px; }
+.prose h2 { margin-top: 46px; }
+.prose blockquote { margin: 30px 0; padding: 2px 0 2px 22px; border-left: 2px solid #999; color: #454545; font-size: 20px; font-style: italic; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose hr { margin: 42px 0; border: 0; border-top: 1px solid var(--rule); }
+.prose img { display: block; max-width: 100%; height: auto; margin: 28px auto 8px; }
+.prose figure { margin: 32px 0; }
+.prose figure img { margin: 0 0 8px; }
+.prose figcaption { color: var(--muted); font-size: 14px; line-height: 1.45; }
+.prose code { padding: .08em .28em; background: var(--wash); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; }
+.prose pre { overflow-x: auto; padding: 18px; background: var(--wash); font-size: 14px; line-height: 1.5; }
+.prose pre code { padding: 0; background: transparent; }
+.prose table { width: 100%; margin: 28px 0; border-collapse: collapse; font-size: 15px; }
+.prose th, .prose td { padding: 9px 10px; border-bottom: 1px solid var(--rule); text-align: left; }
+.prose sup { line-height: 0; }
+.paper-visual { width: 100%; aspect-ratio: 3 / 1; margin-bottom: 20px; border: 1px solid var(--rule); background: url("/images/paper-atlas.png") center 0 / 100% 500% no-repeat; }
+.visual-1 { background-position: center 0%; } .visual-2 { background-position: center 25%; } .visual-3 { background-position: center 50%; } .visual-4 { background-position: center 75%; } .visual-5 { background-position: center 100%; }
+.paper-row { display: grid; grid-template-columns: 112px 1fr; gap: 20px; }
+.paper-thumb { aspect-ratio: 1.45; border: 1px solid var(--rule); background: url("/images/paper-atlas.png") center 0 / 100% 500% no-repeat; }
+.paper-row .visual-2 { background-position: center 25%; } .paper-row .visual-3 { background-position: center 50%; } .paper-row .visual-4 { background-position: center 75%; } .paper-row .visual-5 { background-position: center 100%; }
+.back-link { display: inline-block; margin-top: 38px; font-size: 15px; }
+@media (max-width: 560px) { body { font-size: 16px; } .site-shell, .site-shell.wide { width: min(100% - 28px, 680px); } .site-header { padding-top: 24px; } main { padding-top: 38px; } h1 { font-size: 28px; } .paper-row { grid-template-columns: 82px 1fr; gap: 14px; } .dek { font-size: 18px; } .prose { font-size: 17px; } }

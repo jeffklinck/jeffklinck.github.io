@@ -1,0 +1,17 @@
+---
+import { getEntry, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const about = await getEntry("pages", "about");
+if (!about) throw new Error("Missing about page");
+const { Content } = await render(about);
+---
+
+<BaseLayout description={about.data.description}>
+  <article class="prose"><Content /></article>
+  <ul class="page-links">
+    <li><a href="/academic/">Academic work and publications</a></li>
+    <li><a href="/personal/">Notes and personal writing</a></li>
+    <li><a href="/contact/">Contact information</a></li>
+  </ul>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+const path = Astro.url.pathname;
+const links = [
+  { href: "/", label: "About" },
+  { href: "/academic/", label: "Academic" },
+  { href: "/personal/", label: "Personal" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+
+<header class="site-header">
+  <a class="site-name" href="/">Jeff Klinck</a>
+  <nav aria-label="Primary navigation">
+    {links.map((link) => (
+      <a href={link.href} aria-current={path === link.href || (link.href !== "/" && path.startsWith(link.href)) ? "page" : undefined}>{link.label}</a>
+    ))}
+  </nav>
+</header>
