@@ -9,7 +9,4 @@ I am an Engineering Science student at the University of Toronto, majoring in En
 
 My work focuses on financial infrastructure, distributed systems, and technology policy—particularly stablecoins, tokenization, payment systems, and verifiable smart contracts.
 
-<figure>
-  <img src="/images/cigi-dph-panel-original.jpg" alt="Jeff Klinck seated on a panel at the CIGI Digital Policy Hub research conference">
-  <figcaption>CIGI Digital Policy Hub research conference, April 2026.</figcaption>
-</figure>
+<img src="/images/cigi-dph-panel-speaking-original.jpg" alt="Jeff Klinck speaking on a panel at the CIGI Digital Policy Hub research conference">
