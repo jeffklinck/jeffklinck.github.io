@@ -27,6 +27,8 @@ const papers = defineCollection({
     venue: z.string(),
     summary: z.string(),
     abstract: z.string(),
+    citationAuthors: z.string(),
+    citationPublication: z.string(),
     logo: z.string(),
     logoAlt: z.string(),
     externalUrl: z.url().optional(),

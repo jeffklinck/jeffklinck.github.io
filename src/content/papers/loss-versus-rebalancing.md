@@ -1,13 +1,15 @@
 ---
-title: Modelling Loss-Versus-Rebalancing in AMMs via Continuous-Installment Options
+title: Modeling Loss-Versus-Rebalancing in Automated Market Makers via Continuous-Installment Options
 year: "2025"
 kind: Conference paper
 venue: Advances in Financial Technologies
 summary: An options-based framework for understanding the losses automated-market-maker liquidity providers face relative to a rebalanced portfolio.
 abstract: This paper models loss-versus-rebalancing in automated market makers through continuous-installment options. The framework connects an AMM-specific performance measure to familiar derivatives concepts and clarifies how price paths, fee income, and embedded optionality shape liquidity-provider outcomes.
+citationAuthors: S. F. Singh, R. K. X. Li, S. Gaskin, Y. Wu, J. Klinck, P. Michalopoulos, Z. Poulos, and A. Veneris
+citationPublication: "7th Conference on Advances in Financial Technologies, LIPIcs, vol. 354, art. 6, pp. 6:1-6:23, 2025. doi: 10.4230/LIPIcs.AFT.2025.6."
 logo: /logos/lipics.png
 logoAlt: LIPIcs proceedings logo
-externalUrl: https://www.eecg.utoronto.ca/~veneris/pubs.html
+externalUrl: https://doi.org/10.4230/LIPIcs.AFT.2025.6
 gallery: []
 visual: 4
 order: 4

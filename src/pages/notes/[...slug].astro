@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
-import EntryLayout from "../../layouts/EntryLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate } from "../../lib/dates";
 export async function getStaticPaths() {
   const notes = await getCollection("notes", ({ data }) => !data.draft);
   return notes.map((note) => ({ params: { slug: note.id }, props: { note } }));
@@ -9,7 +10,11 @@ const { note } = Astro.props;
 const { Content } = await render(note);
 ---
 
-<EntryLayout title={note.data.title} description={note.data.summary} eyebrow={note.data.eyebrow} date={note.data.date}>
-  <Content />
-  <a class="back-link" href="/personal/">← All notes</a>
-</EntryLayout>
+<BaseLayout title={note.data.title} description={note.data.summary}>
+  <article class="prose">
+    <h1>{note.data.title}</h1>
+    <p class="meta">{formatDate(note.data.date)}</p>
+    <Content />
+    <p><a href="/personal/">← All notes</a></p>
+  </article>
+</BaseLayout>

@@ -48,6 +48,9 @@ li { margin-bottom: 8px; }
 .prose table { width: 100%; margin: 28px 0; border-collapse: collapse; font-size: 15px; }
 .prose th, .prose td { padding: 9px 10px; border-bottom: 1px solid var(--rule); text-align: left; }
 .prose sup { line-height: 0; }
+.citation-list { padding-left: 28px; }
+.citation-list li { margin-bottom: 15px; padding-left: 5px; }
+.citation-detail { color: #444; font-size: 15px; line-height: 1.55; }
 .paper-visual { width: 100%; aspect-ratio: 3 / 1; margin-bottom: 20px; border: 1px solid var(--rule); background: url("/images/paper-atlas.png") center 0 / 100% 500% no-repeat; }
 .visual-1 { background-position: center 0%; } .visual-2 { background-position: center 25%; } .visual-3 { background-position: center 50%; } .visual-4 { background-position: center 75%; } .visual-5 { background-position: center 100%; }
 .paper-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }

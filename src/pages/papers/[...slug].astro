@@ -1,15 +1,19 @@
 ---
-import { getCollection, render } from "astro:content";
-import EntryLayout from "../../layouts/EntryLayout.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 export async function getStaticPaths() {
   const papers = await getCollection("papers");
   return papers.map((paper) => ({ params: { slug: paper.id }, props: { paper } }));
 }
 const { paper } = Astro.props;
-const { Content } = await render(paper);
 ---
 
-<EntryLayout title={paper.data.title} description={paper.data.summary} eyebrow={`${paper.data.kind} - ${paper.data.year}`} venue={paper.data.venue} externalUrl={paper.data.externalUrl} visual={paper.data.visual}>
-  <Content />
-  <a class="back-link" href="/professional/">← All papers</a>
-</EntryLayout>
+<BaseLayout title={paper.data.title} description={paper.data.summary}>
+  <article class="prose">
+    <h1>{paper.data.title}</h1>
+    <p class="citation-detail">{paper.data.citationAuthors}, “{paper.data.title},” {paper.data.citationPublication}</p>
+    <p>{paper.data.abstract}</p>
+    {paper.data.externalUrl && <p><a href={paper.data.externalUrl}>Read the published work ↗</a></p>}
+    <p><a href="/professional/">← All papers</a></p>
+  </article>
+</BaseLayout>

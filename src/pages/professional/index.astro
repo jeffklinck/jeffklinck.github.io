@@ -11,13 +11,12 @@ const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.d
   <article class="prose">
     <Content />
     <h2>Papers</h2>
-    <ul>
+    <ol class="citation-list">
       {papers.map((paper) => (
         <li>
-          <a href={`/papers/${paper.id}/`}>{paper.data.title}</a>
-          {` - ${paper.data.venue}, ${paper.data.year}`}
+          {paper.data.citationAuthors}, “<a href={`/papers/${paper.id}/`}>{paper.data.title}</a>,” {paper.data.citationPublication}
         </li>
       ))}
-    </ul>
+    </ol>
   </article>
 </BaseLayout>
