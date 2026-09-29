@@ -16,7 +16,6 @@ h3 { margin: 28px 0 10px; font-size: 19px; line-height: 1.35; }
 p { margin: 0 0 19px; }
 ul, ol { margin: 0 0 22px; padding-left: 26px; }
 li { margin-bottom: 8px; }
-.page-links { margin-top: 30px; padding: 0; list-style: none; font-size: 18px; }
 .meta { margin-bottom: 6px; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
 .prose { font-size: 18px; }
 .prose h2 { margin-top: 46px; }

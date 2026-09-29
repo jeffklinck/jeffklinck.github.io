@@ -9,11 +9,6 @@
     { "href": "/personal/", "label": "Personal" },
     { "href": "/contact/", "label": "Contact" }
   ],
-  "homeLinks": [
-    { "href": "/professional/", "label": "Professional work and publications" },
-    { "href": "/personal/", "label": "Notes and personal writing" },
-    { "href": "/contact/", "label": "Contact information" }
-  ],
   "labels": {
     "papers": "Papers",
     "workExperience": "Work Experience",
