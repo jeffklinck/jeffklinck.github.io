@@ -12,7 +12,6 @@ const { paper } = Astro.props;
 <BaseLayout title={paper.data.title} description={paper.data.summary}>
   <article class="prose">
     <h1>{paper.data.title}</h1>
-    <p class="citation-detail">{paper.data.citationAuthors}, “{paper.data.title},” {paper.data.citationPublication}</p>
     <p>{paper.data.abstract}</p>
     {paper.data.externalUrl && <p><a href={paper.data.externalUrl}>{site.labels.readPublishedWork}</a></p>}
     <p><a href="/professional/">{site.labels.allPapers}</a></p>
