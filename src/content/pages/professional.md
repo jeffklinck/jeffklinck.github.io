@@ -13,9 +13,4 @@ BASc in Engineering Science
 
 T-Holder’s Academic Excellence Award.
 
-## Selected coursework
-
-- Machine Intelligence
-- Quantum Mechanics
-- Computer Systems and Networks
-- Probability and Statistics
+**Selected coursework:** Machine Intelligence; Quantum Mechanics; Computer Systems and Networks; Probability and Statistics.
