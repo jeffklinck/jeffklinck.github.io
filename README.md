@@ -1,38 +1,19 @@
-# Jeff Klinck - personal site
+# Jeff Klinck
 
-A static personal site built with Astro and published with GitHub Pages. There is no database or custom editor: the writing lives in ordinary Markdown files in this repository.
+Personal site built with Astro and hosted on GitHub Pages.
 
-## Where to edit content
+## Content
 
-- Edit the bio in `src/content/pages/about.md`.
-- Edit education and work experience in `src/content/pages/professional.md`.
-- Edit the Personal introduction in `src/content/pages/personal.md`.
-- Edit contact links in `src/content/pages/contact.md`.
-- Add a note by copying a file in `src/content/notes/`, renaming it, and changing its frontmatter and body.
-- Add a paper by copying a file in `src/content/papers/`. Its frontmatter controls the title, citation, short description, publication link, and display order.
-- Edit the site name, navigation, homepage links, and shared labels in `src/data/site.json`.
-- Add images to `public/images/`, then use them from Markdown as `/images/your-file.jpg`.
+- Bio: `src/content/pages/about.md`
+- Education and experience: `src/content/pages/professional.md`
+- Personal page: `src/content/pages/personal.md`
+- Contact details: `src/content/pages/contact.md`
+- Papers: `src/content/papers/`
+- Notes: `src/content/notes/`
+- Navigation and labels: `src/data/site.json`
+- Images: `public/images/`
 
-The files under `src/content/` and `src/data/site.json` contain all routine site text. Layout and styling live elsewhere and do not need to be edited for content changes.
-
-Markdown supports headings, lists, links, blockquotes, tables, code, footnotes, and images. Raw HTML can be used for a captioned image:
-
-Link any phrase to another page or an external site with standard Markdown:
-
-```md
-[See my professional work](/professional/)
-[Read this paper](/papers/verifiable-smart-contracts/)
-[Visit an external source](https://example.com)
-```
-
-```html
-<figure>
-  <img src="/images/example.jpg" alt="A useful description">
-  <figcaption>Your caption.</figcaption>
-</figure>
-```
-
-Set `draft: true` in a note's frontmatter to keep it out of the published site.
+Use standard Markdown links: `[label](/page/)`. Set `draft: true` on a note to hide it.
 
 ## Preview locally
 
@@ -43,4 +24,4 @@ npm run dev
 
 ## Publish
 
-Every push to `main` runs the workflow in `.github/workflows/deploy.yml`. In the repository settings, choose **GitHub Actions** as the Pages source once; subsequent changes publish automatically.
+Push to `main`.
