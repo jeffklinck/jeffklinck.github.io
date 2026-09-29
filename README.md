@@ -5,12 +5,20 @@ A static personal site built with Astro and published with GitHub Pages. There i
 ## Make common updates
 
 - Edit the bio in `src/content/pages/about.md`.
-- Edit education and coursework in `src/content/pages/academic.md`.
+- Edit education and coursework in `src/content/pages/professional.md`.
 - Add a note by copying a file in `src/content/notes/`, renaming it, and changing its frontmatter and body.
 - Add a paper by copying a file in `src/content/papers/` and setting its `order`, metadata, and body.
 - Add images to `public/images/`, then use them from Markdown as `/images/your-file.jpg`.
 
 Markdown supports headings, lists, links, blockquotes, tables, code, footnotes, and images. Raw HTML can be used for a captioned image:
+
+Link any phrase to another page or an external site with standard Markdown:
+
+```md
+[See my professional work](/professional/)
+[Read this paper](/papers/verifiable-smart-contracts/)
+[Visit an external source](https://example.com)
+```
 
 ```html
 <figure>

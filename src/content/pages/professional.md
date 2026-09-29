@@ -1,9 +1,9 @@
 ---
-title: Academic
-description: Education and papers by Jeff Klinck.
+title: Professional
+description: Education, research, and papers by Jeff Klinck.
 ---
 
-# Academic
+# Professional
 
 ## Education
 

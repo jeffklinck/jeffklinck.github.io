@@ -1,8 +1,8 @@
 ---
 import { getCollection, getEntry, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const page = await getEntry("pages", "academic");
-if (!page) throw new Error("Missing academic page");
+const page = await getEntry("pages", "professional");
+if (!page) throw new Error("Missing professional page");
 const { Content } = await render(page);
 const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.data.order);
 ---
