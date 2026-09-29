@@ -1,48 +1,23 @@
 ---
 import { getCollection, getEntry, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PaperCard from "../../components/PaperCard.astro";
 const page = await getEntry("pages", "professional");
 if (!page) throw new Error("Missing professional page");
 const { Content } = await render(page);
 const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout title={page.data.title} description={page.data.description} wide>
-  <article class="prose"><Content /></article>
-  <div class="section-heading"><h2>Papers</h2></div>
-  <div class="paper-grid">
-    {papers.map((paper) => (
-      <PaperCard
-        id={paper.id}
-        title={paper.data.title}
-        year={paper.data.year}
-        kind={paper.data.kind}
-        venue={paper.data.venue}
-        summary={paper.data.summary}
-        abstract={paper.data.abstract}
-        logo={paper.data.logo}
-        logoAlt={paper.data.logoAlt}
-        externalUrl={paper.data.externalUrl}
-        gallery={paper.data.gallery}
-        visual={paper.data.visual}
-      />
-    ))}
-  </div>
+<BaseLayout title={page.data.title} description={page.data.description}>
+  <article class="prose">
+    <Content />
+    <h2>Papers</h2>
+    <ul>
+      {papers.map((paper) => (
+        <li>
+          <a href={`/papers/${paper.id}/`}>{paper.data.title}</a>
+          {` - ${paper.data.venue}, ${paper.data.year}`}
+        </li>
+      ))}
+    </ul>
+  </article>
 </BaseLayout>
-
-<script>
-  document.querySelectorAll<HTMLElement>("[data-open-dialog]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const id = button.dataset.openDialog;
-      const dialog = id ? document.getElementById(id) : null;
-      if (dialog instanceof HTMLDialogElement) dialog.showModal();
-    });
-  });
-  document.querySelectorAll<HTMLDialogElement>(".paper-dialog").forEach((dialog) => {
-    dialog.querySelector("[data-close-dialog]")?.addEventListener("click", () => dialog.close());
-    dialog.addEventListener("click", (event) => {
-      if (event.target === dialog) dialog.close();
-    });
-  });
-</script>
