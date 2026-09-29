@@ -4,7 +4,16 @@ import { z } from "astro/zod";
 
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
-  schema: z.object({ title: z.string(), description: z.string().optional() }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    experience: z.array(z.object({
+      company: z.string(),
+      role: z.string(),
+      dates: z.string(),
+      summary: z.string(),
+    })).optional(),
+  }),
 });
 
 const notes = defineCollection({

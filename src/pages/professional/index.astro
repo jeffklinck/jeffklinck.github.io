@@ -5,6 +5,7 @@ const page = await getEntry("pages", "professional");
 if (!page) throw new Error("Missing professional page");
 const { Content } = await render(page);
 const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.data.order);
+const experience = page.data.experience ?? [];
 ---
 
 <BaseLayout title={page.data.title} description={page.data.description}>
@@ -18,5 +19,15 @@ const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.d
         </li>
       ))}
     </ol>
+    <h2>Work Experience</h2>
+    <div class="experience-list">
+      {experience.map((item) => (
+        <section>
+          <h3>{item.company}</h3>
+          <p><em>{item.role}</em> - {item.dates}</p>
+          <p>{item.summary}</p>
+        </section>
+      ))}
+    </div>
   </article>
 </BaseLayout>
