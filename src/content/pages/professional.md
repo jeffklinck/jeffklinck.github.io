@@ -26,5 +26,5 @@ experience:
 
 **University of Toronto**<br>
 BASc in Engineering Science, Engineering Physics<br>
-*AI Engineering minor. Expected grad 2027*<br>
-*T-Holder’s Academic Excellence Award (Varsity Athlete with Average > 80)*
+AI Engineering minor. Expected grad 2027<br>
+T-Holder’s Academic Excellence Award (Varsity Athlete with Average > 80)
